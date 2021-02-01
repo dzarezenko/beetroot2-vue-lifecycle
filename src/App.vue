@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <input type="text" @input="input" />
+    <input type="text" ref="inputField" />
     <h1>{{ title }}</h1>
     <button @click="changeTitle">Press Me</button>
   </div>
@@ -15,13 +15,16 @@ export default {
     }
   },
   methods: {
-    input(event) {
+    /*input(event) {
       this.message = event.target.value;
       console.log(this.message);
-    },
+    },*/
     changeTitle() {
-      this.title = this.message;
+      this.title = this.$refs.inputField.value //this.message;
     }
+  },
+  mounted() {
+    console.log(this);
   }
 }
 </script>
