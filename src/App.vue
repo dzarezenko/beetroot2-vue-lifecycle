@@ -47,6 +47,12 @@ export default {
         setTimeout(tick, 1000);
       }
     }, 0)
+  },
+  beforeUpdate() {
+    console.log("beforeUpdate");
+  },
+  updated() {
+    console.log("updated");
   }
 }
 </script>
