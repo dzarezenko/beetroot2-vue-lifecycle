@@ -47,12 +47,22 @@ export default {
         setTimeout(tick, 1000);
       }
     }, 0)
+
+    /*setTimeout(() => {
+      this.$destroy();
+    }, 5000);*/
   },
   beforeUpdate() {
     console.log("beforeUpdate");
   },
   updated() {
     console.log("updated");
+  },
+  beforeDestroy() {
+    console.log("beforeDestroy");
+  },
+  destroyed() {
+    console.log("destroyed");
   }
 }
 </script>
