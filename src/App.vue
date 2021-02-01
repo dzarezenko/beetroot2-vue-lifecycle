@@ -23,8 +23,30 @@ export default {
       this.title = this.$refs.inputField.value //this.message;
     }
   },
+  beforeCreate() {
+    console.log("beforeCreate");
+    console.log(window.tronWeb);
+  },
+  created() {
+    console.log("created");
+    console.log(window.tronWeb);
+  },
+  beforeMount() {
+    console.log("beforeMount");
+    console.log(window.tronWeb);
+  },
   mounted() {
-    console.log(this);
+    console.log("mounted");
+    //console.log(window.tronWeb);
+    let game = null;
+    setTimeout(function tick() {
+      game = window.tronWeb;
+      console.log(game);
+
+      if (game == null || game == undefined) {
+        setTimeout(tick, 1000);
+      }
+    }, 0)
   }
 }
 </script>
